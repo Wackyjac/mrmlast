@@ -18,9 +18,9 @@ if __name__ == "__main__":
 
     vocab_size = tokenizer.vocab_size
     max_position_embeddings = 4096
-    hidden_size = 768
-    num_layers = 12
-    num_heads = 12
+    hidden_size = 512
+    num_layers = 8
+    num_heads = 8
     intermediate_size = 3072
     dropout_rate = 0.1
     num_labels = 2
