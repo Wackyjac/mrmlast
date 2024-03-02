@@ -21,8 +21,8 @@ class CustomLongformer(nn.Module):
 
         self.layers = nn.ModuleList(
             [
-                LongformerLayer(hidden_size, num_heads, intermediate_size, dropout_rate)
-                for _ in range(num_layers)
+                LongformerLayer(hidden_size, num_heads, intermediate_size, dropout_rate, id)
+                for id in range(num_layers)
             ]
         )
 

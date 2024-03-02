@@ -3,10 +3,10 @@ import torch.nn as nn
 from .longformer_self_attention import LongformerSelfAttention
 
 class LongformerLayer(nn.Module):
-    def __init__(self, hidden_size, num_heads, intermediate_size, dropout_rate):
+    def __init__(self, hidden_size, num_heads, intermediate_size, dropout_rate, layer_id):
         super(LongformerLayer, self).__init__()
 
-        self.self_attention = LongformerSelfAttention(hidden_size, num_heads, dropout_rate)
+        self.self_attention = LongformerSelfAttention(hidden_size, num_heads, dropout_rate, layer_id)
         self.norm1 = nn.LayerNorm(hidden_size)
         self.dropout1 = nn.Dropout(dropout_rate)
 
