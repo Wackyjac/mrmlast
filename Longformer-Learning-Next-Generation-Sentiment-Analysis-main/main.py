@@ -11,16 +11,16 @@ if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     train_texts, train_labels, test_texts, test_labels = load_split_data()
-    batch_size = 8
+    batch_size = 4
     train_loader, test_loader = create_dataloaders(train_texts, train_labels, test_texts, test_labels, batch_size)
 
     tokenizer = LongformerTokenizer.from_pretrained("allenai/longformer-base-4096")
 
     vocab_size = tokenizer.vocab_size
     max_position_embeddings = 4096
-    hidden_size = 768
-    num_layers = 12
-    num_heads = 12
+    hidden_size = 512
+    num_layers = 8
+    num_heads = 8
     intermediate_size = 3072
     dropout_rate = 0.1
     num_labels = 2
